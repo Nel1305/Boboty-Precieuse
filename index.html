@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joyeux Anniversaire Boboty Précieuse 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffe0f0 0%, #fff0f7 40%, #fce4f5 70%, #f9e4ff 100%);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .petal {
+    position: fixed;
+    font-size: 20px;
+    animation: fall linear infinite;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.7;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-60px) rotate(0deg); opacity: 0.7; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  }
+
+  .star {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: #ffb3de;
+    border-radius: 50%;
+    animation: twinkle ease-in-out infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+    text-align: center;
+  }
+
+  .kawaii-row {
+    font-size: 28px;
+    margin-bottom: 6px;
+    animation: bounce 1.5s ease-in-out infinite alternate;
+    letter-spacing: 6px;
+  }
+  @keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-8px); }
+  }
+
+  .card {
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(10px);
+    border-radius: 32px;
+    border: 2.5px solid #ffb3d9;
+    padding: 36px 32px 32px;
+    box-shadow: 0 8px 40px rgba(255,160,210,0.18);
+    margin: 18px 0;
+  }
+
+  .cake-emoji {
+    font-size: 72px;
+    display: block;
+    margin-bottom: 8px;
+    animation: wiggle 2s ease-in-out infinite;
+  }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-5deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.08); }
+  }
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #d4458a;
+    margin: 8px 0 4px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 0 #ffb3d9;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    color: #e07ab0;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .countdown-section {
+    background: linear-gradient(135deg, #ffe0f5, #fce4ff);
+    border-radius: 20px;
+    padding: 18px 20px 14px;
+    margin: 20px 0;
+    border: 1.5px solid #f9b3e0;
+  }
+
+  .countdown-label {
+    font-size: 0.75rem;
+    color: #c06090;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+
+  .countdown-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .time-box {
+    background: white;
+    border-radius: 14px;
+    border: 1.5px solid #ffb3d9;
+    padding: 10px 14px;
+    min-width: 60px;
+  }
+
+  .time-number {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.6rem;
+    color: #d4458a;
+    display: block;
+    line-height: 1;
+  }
+
+  .time-unit {
+    font-size: 0.65rem;
+    color: #c06090;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .message-card {
+    background: linear-gradient(135deg, #fff0fb, #fce4ff);
+    border-radius: 20px;
+    padding: 22px 24px;
+    margin: 20px 0;
+    border: 1.5px solid #f9b3e0;
+    text-align: left;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #ffb3d9;
+    line-height: 0.5;
+    float: left;
+    margin-right: 8px;
+    margin-top: 10px;
+  }
+
+  .message-text {
+    font-size: 0.97rem;
+    color: #7a3060;
+    line-height: 1.8;
+    font-weight: 600;
+  }
+
+  .signature {
+    text-align: right;
+    margin-top: 12px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.1rem;
+    color: #d4458a;
+  }
+
+  .balloons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 14px 0;
+    font-size: 38px;
+    animation: floatRow 3s ease-in-out infinite alternate;
+  }
+  @keyframes floatRow {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  .music-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #f06abf, #d4458a);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(212,69,138,0.3);
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+  .music-btn:hover { transform: scale(1.06); box-shadow: 0 6px 24px rgba(212,69,138,0.4); }
+  .music-btn:active { transform: scale(0.97); }
+
+  .heart-burst {
+    position: fixed;
+    pointer-events: none;
+    font-size: 22px;
+    animation: burst 1s ease-out forwards;
+    z-index: 999;
+  }
+  @keyframes burst {
+    0% { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.5); }
+  }
+
+  @media (max-width: 400px) {
+    h1 { font-size: 1.5rem; }
+    .time-box { min-width: 50px; padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<script>
+  const petals = ['🌸','🌺','💮','🌼','✨','💖','🎀','💝'];
+  for(let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.textContent = petals[Math.floor(Math.random()*petals.length)];
+    p.style.left = Math.random()*100+'vw';
+    p.style.animationDuration = (4+Math.random()*6)+'s';
+    p.style.animationDelay = (-Math.random()*8)+'s';
+    p.style.fontSize = (14+Math.random()*16)+'px';
+    document.body.appendChild(p);
+  }
+  for(let i=0;i<20;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    s.style.left=Math.random()*100+'vw';
+    s.style.top=Math.random()*100+'vh';
+    s.style.animationDuration=(2+Math.random()*3)+'s';
+    s.style.animationDelay=(Math.random()*3)+'s';
+    document.body.appendChild(s);
+  }
+</script>
+
+<div class="container">
+  <div class="kawaii-row">🎀 🌸 🎀</div>
+
+  <div class="card">
+    <span class="cake-emoji">🎂</span>
+    <h1>Joyeux Anniversaire</h1>
+    <h1>Boboty Précieuse !</h1>
+    <p class="subtitle">✨ La plus belle des filles ✨</p>
+
+    <div class="balloons">🎈💕🎊💕🎈</div>
+
+    <div class="countdown-section">
+      <div class="countdown-label">⏰ Ton grand jour arrive dans...</div>
+      <div class="countdown-boxes">
+        <div class="time-box">
+          <span class="time-number" id="h">00</span>
+          <span class="time-unit">heures</span>
+        </div>
+        <div class="time-box">
+          <span class="time-number" id="m">00</span>
+          <span class="time-unit">min</span>
+        </div>
+        <div class="time-box">
+          <span class="time-number" id="s">00</span>
+          <span class="time-unit">sec</span>
+        </div>
+      </div>
+      <div id="bday-msg" style="margin-top:12px;font-weight:700;color:#d4458a;font-size:1rem;display:none;">
+        🎉 C'est ton anniversaire aujourd'hui ! 🎉
+      </div>
+    </div>
+
+    <div class="message-card">
+      <span class="quote-mark">"</span>
+      <p class="message-text">
+        Je sais pas trop quoi dire, mais d'abord un merci pour tout bébé. <br><br> je suis vraiment content de t'avoir rencontrée, de t'avoir connue et d'avoir aimer t'aimer chérie. 
+        On est le 16 mars 2026 et t'as 17 ans. 
+        Je suis fiere de la personne que tu es et surtout celle que t'es devenue. 
+        T'es belle, courte, intelligente, drôle, serieuse, folle et bien d'autres. 
+        Chez toi chaque qualité est un cadeau précieux et je les vois tes défauts comme des qualités qui te sublime encore plus chaque jour bébé. J'aimerais juste te souhaité un Joyeux Anniversaire mon Coeur. 
+        Et surtout désolé pour les fautes d'orthographes. 
+        Je suis un peux épuisé. Mais je t'attend et j'ai hâte qu'on se retrouve petit cochon.<br>T'es parfaite et je t'aime Buabey !     </p>
+      <p class="signature">Avec tout mon amour ma grosse tête chérie,<br>Buabey Arold 💖</p>
+    </div>
+
+    <button class="music-btn" onclick="toggleMusic(this)">
+      <span>🎵</span>
+      <span id="music-label">Jouer la musique 🎂</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  function getTarget() {
+    const now = new Date();
+    const target = new Date(now);
+    target.setDate(now.getDate() + 1);
+    target.setHours(0, 0, 0, 0);
+    return target;
+  }
+
+  function updateCountdown() {
+    const now = new Date();
+    const target = getTarget();
+    const diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('h').textContent = '00';
+      document.getElementById('m').textContent = '00';
+      document.getElementById('s').textContent = '00';
+      document.getElementById('bday-msg').style.display = 'block';
+      return;
+    }
+    const h = Math.floor(diff / 3600000);
+    const min = Math.floor((diff % 3600000) / 60000);
+    const sec = Math.floor((diff % 60000) / 1000);
+    document.getElementById('h').textContent = String(h).padStart(2,'0');
+    document.getElementById('m').textContent = String(min).padStart(2,'0');
+    document.getElementById('s').textContent = String(sec).padStart(2,'0');
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+
+  document.addEventListener('click', function(e) {
+    const emojis = ['💖','💕','🌸','✨','🎀','💝','🌺'];
+    for(let i=0;i<6;i++){
+      const h = document.createElement('div');
+      h.className = 'heart-burst';
+      h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      h.style.left = e.clientX + 'px';
+      h.style.top = e.clientY + 'px';
+      const angle = (Math.random()*360)*Math.PI/180;
+      const dist = 60+Math.random()*80;
+      h.style.setProperty('--tx', Math.cos(angle)*dist+'px');
+      h.style.setProperty('--ty', Math.sin(angle)*dist+'px');
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(), 1000);
+    }
+  });
+
+  let playing = false;
+  let audioCtx = null;
+  let gainNode = null;
+  let oscillators = [];
+  let timeouts = [];
+
+  const notes = {
+    'C4':261.63,'D4':293.66,'E4':329.63,'F4':349.23,'G4':392.00,
+    'A4':440.00,'B4':493.88,'C5':523.25,'D5':587.33,'E5':659.25,
+    'F5':698.46,'G5':783.99,'A5':880.00
+  };
+
+  const song = [
+    ['G4',0.5],['G4',0.5],['A4',1],['G4',1],['C5',1],['B4',2],
+    ['G4',0.5],['G4',0.5],['A4',1],['G4',1],['D5',1],['C5',2],
+    ['G4',0.5],['G4',0.5],['G5',1],['E5',1],['C5',1],['B4',1],['A4',2],
+    ['F5',0.5],['F5',0.5],['E5',1],['C5',1],['D5',1],['C5',2]
+  ];
+
+  function playNote(freq, startTime, duration) {
+    const osc = audioCtx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, startTime);
+    const g = audioCtx.createGain();
+    g.gain.setValueAtTime(0.5, startTime);
+    g.gain.exponentialRampToValueAtTime(0.01, startTime + duration * 0.9);
+    osc.connect(g);
+    g.connect(gainNode);
+    osc.start(startTime);
+    osc.stop(startTime + duration);
+    oscillators.push(osc);
+  }
+
+  function playSong() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    gainNode = audioCtx.createGain();
+    gainNode.gain.setValueAtTime(0.7, audioCtx.currentTime);
+    gainNode.connect(audioCtx.destination);
+    oscillators = [];
+    let t = audioCtx.currentTime + 0.1;
+    const tempo = 0.4;
+    for (const [note, beats] of song) {
+      if (notes[note]) playNote(notes[note], t, beats * tempo * 0.9);
+      t += beats * tempo;
+    }
+    const totalDuration = song.reduce((a,[,b])=>a+b,0) * tempo * 1000 + 300;
+    const tid = setTimeout(()=>{ if(playing) playSong(); }, totalDuration);
+    timeouts.push(tid);
+  }
+
+  function stopMusic() {
+    timeouts.forEach(clearTimeout);
+    timeouts = [];
+    oscillators.forEach(o=>{ try{o.stop();}catch(e){} });
+    oscillators = [];
+    if(gainNode) { gainNode.gain.setValueAtTime(0, audioCtx.currentTime); }
+  }
+
+  function toggleMusic(btn) {
+    if (!playing) {
+      playing = true;
+      document.getElementById('music-label').textContent = 'Arrêter la musique 🔇';
+      playSong();
+    } else {
+      playing = false;
+      document.getElementById('music-label').textContent = 'Jouer la musique 🎂';
+      stopMusic();
+    }
+  }
+</script>
+</body>
+</html>
